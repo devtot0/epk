@@ -67,17 +67,31 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
     console.log('🎵 Cyamus audio effect triggered:', { activeBackground, selectedCyamusAudio, audioEnabled });
     
     if (activeBackground === 'cyamus' && audioEnabled && selectedCyamusAudio && cyamusAudioRef.current) {
-      cyamusAudioRef.current.src = selectedCyamusAudio;
-      cyamusAudioRef.current.muted = false;
-      cyamusAudioRef.current.volume = 0.6;
+      // Stop any current playback first
+      cyamusAudioRef.current.pause();
       cyamusAudioRef.current.currentTime = 0;
-      cyamusAudioRef.current.play().then(() => {
-        console.log('✅ Cyamus audio started playing:', selectedCyamusAudio);
-      }).catch((error) => {
-        console.error('❌ Error playing cyamus audio:', error);
-      });
+      
+      // Wait a bit before setting new source and playing
+      setTimeout(() => {
+        if (cyamusAudioRef.current) {
+          cyamusAudioRef.current.src = selectedCyamusAudio;
+          cyamusAudioRef.current.muted = false;
+          cyamusAudioRef.current.volume = 0.6;
+          cyamusAudioRef.current.load(); // Reload the audio element
+          
+          // Wait for load to complete before playing
+          cyamusAudioRef.current.addEventListener('canplaythrough', () => {
+            cyamusAudioRef.current?.play().then(() => {
+              console.log('✅ Cyamus audio started playing:', selectedCyamusAudio);
+            }).catch((error) => {
+              console.error('❌ Error playing cyamus audio:', error);
+            });
+          }, { once: true });
+        }
+      }, 100);
     } else if (cyamusAudioRef.current) {
       cyamusAudioRef.current.pause();
+      cyamusAudioRef.current.currentTime = 0;
       console.log('⏸️ Cyamus audio stopped');
     }
   }, [activeBackground, selectedCyamusAudio, audioEnabled]);
@@ -122,12 +136,12 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
         {selectedCyamusAudio && <source src={selectedCyamusAudio} type="audio/mpeg" />}
         Your browser does not support the audio element.
       </audio>
-      {/* Default Background - img_1.png */}
+      {/* Default Background - hyoscyamus.webp */}
       <div className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
         activeBackground === 'default' ? 'opacity-100' : 'opacity-0'
       }`}>
         <Image
-          src="/img_1.png"
+          src="/hyoscyamus.webp"
           alt="Default Background"
           fill
           className="object-cover object-[center_27%]"
