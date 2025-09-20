@@ -32,7 +32,7 @@ export default function Overlay({ type, onClose }: OverlayProps) {
     switch (type) {
       case 'hyos':
         return (
-          <div className="p-8">
+          <div className="p-8" style={{ background: 'transparent' }}>
             <h2 className="text-3xl mb-6 text-white">Hyos</h2>
             <div className="text-white space-y-6 max-w-2xl">
               <div className="space-y-4">
@@ -64,7 +64,7 @@ export default function Overlay({ type, onClose }: OverlayProps) {
       
       case 'cyamus':
         return (
-          <div className="p-8">
+          <div className="p-8" style={{ background: 'transparent' }}>
             <div className="w-full flex justify-end mb-6">
               <h2 className="text-3xl text-white">Cyamus</h2>
             </div>
@@ -117,9 +117,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
   return (
     <div 
       className="fixed inset-0 z-[60]"
-      style={{ backdropFilter: 'blur(12px)' }}
+      style={{ background: 'transparent' }}
     >
-      {/* Close button - position depends on overlay type */}
+        {/* Close button - position depends on overlay type */}
       <button
         onClick={onClose}
         className={`absolute top-6 text-white hover:text-gray-300 transition-colors z-[70] ${
@@ -143,7 +143,7 @@ export default function Overlay({ type, onClose }: OverlayProps) {
       </button>
       
       {/* Scrollable content */}
-      <div className="relative z-10 h-full overflow-y-auto">
+      <div className="relative z-10 h-full overflow-y-auto" style={{ background: 'transparent' }}>
         {renderContent()}
       </div>
     </div>
