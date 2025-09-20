@@ -116,7 +116,7 @@ export default function Overlay({ type, onClose }: OverlayProps) {
 
   return (
     <div 
-      className="fixed inset-0 z-[60]"
+      className="fixed inset-0 z-[60] animate-in fade-in duration-300"
       style={{ background: 'transparent' }}
     >
         {/* Close button - position depends on overlay type */}
