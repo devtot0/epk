@@ -35,7 +35,7 @@ export default function Home() {
       
       {/* Black overlay when overlay is active */}
       {activeOverlay && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 z-[55]" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+        <div className="fixed inset-0 bg-black bg-opacity-30 z-[55]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
           {/* Debug: This should be visible */}
         </div>
       )}
