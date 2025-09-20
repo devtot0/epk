@@ -25,7 +25,7 @@ export default function SplashScreen({ onAccept }: SplashScreenProps) {
       className="fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center cursor-pointer"
       onClick={handleClick}
     >
-      <div className="relative max-w-md w-full mx-4">
+      <div className="relative max-w-48 w-full mx-4">
         {/* Splash Image */}
         <div className="relative w-full aspect-square">
           <Image
@@ -33,13 +33,16 @@ export default function SplashScreen({ onAccept }: SplashScreenProps) {
             alt="Click to enable audio and video"
             fill
             className={`object-cover rounded-lg transition-all duration-200 ${
-              isClicked ? 'scale-95 opacity-80' : 'hover:scale-105'
+              isClicked ? 'scale-95 opacity-80' : 'hover:scale-105 animate-pulse'
             }`}
+            style={{
+              animation: isClicked ? 'none' : 'breathe 3s ease-in-out infinite'
+            }}
             priority
           />
         </div>
         
-        {/* Click instruction */}
+        {/* Click instruction
         <div className="mt-6 text-center">
           <p className="text-white text-lg font-medium mb-2">
             Click to enable audio and video
@@ -47,14 +50,14 @@ export default function SplashScreen({ onAccept }: SplashScreenProps) {
           <p className="text-gray-300 text-sm">
             This will allow multimedia content to play automatically
           </p>
-        </div>
+        </div> */}
         
-        {/* Loading indicator when clicked */}
+        {/* Loading indicator when clicked
         {isClicked && (
           <div className="mt-4 flex justify-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
