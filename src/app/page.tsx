@@ -31,11 +31,11 @@ export default function Home() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Manager Component */}
-      <BackgroundManager activeBackground={activeBackground} />
+      <BackgroundManager activeBackground={activeBackground} activeOverlay={activeOverlay} />
       
       {/* Black overlay when overlay is active */}
       {activeOverlay && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 z-[55]" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
+        <div className="fixed inset-0 bg-black bg-opacity-30 z-[55]" style={{ backgroundColor: 'rgba(0, 0, 0, 0.51)' }}>
           {/* Debug: This should be visible */}
         </div>
       )}

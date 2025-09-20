@@ -5,12 +5,15 @@ import { useEffect, useRef } from 'react';
 
 interface BackgroundManagerProps {
   activeBackground: 'default' | 'hyos' | 'cyamus';
+  activeOverlay: string | null;
 }
 
-export default function BackgroundManager({ activeBackground }: BackgroundManagerProps) {
+export default function BackgroundManager({ activeBackground, activeOverlay }: BackgroundManagerProps) {
   const hyosVideoRef = useRef<HTMLVideoElement>(null);
   const cyamusVideoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const audio1Ref = useRef<HTMLAudioElement>(null);
+  const audio2Ref = useRef<HTMLAudioElement>(null);
 
   // Handle autoplay after hydration
   useEffect(() => {
@@ -26,6 +29,23 @@ export default function BackgroundManager({ activeBackground }: BackgroundManage
     }
   }, []);
 
+  // Handle overlay audio
+  useEffect(() => {
+    if (activeOverlay === 'hyos' && audio1Ref.current) {
+      audio1Ref.current.volume = 0.6; // 60% volume
+      audio1Ref.current.play().catch(console.error);
+    } else if (audio1Ref.current) {
+      audio1Ref.current.pause();
+    }
+
+    if (activeOverlay === 'cyamus' && audio2Ref.current) {
+      audio2Ref.current.volume = 0.6; // 60% volume
+      audio2Ref.current.play().catch(console.error);
+    } else if (audio2Ref.current) {
+      audio2Ref.current.pause();
+    }
+  }, [activeOverlay]);
+
   return (
     <div className="fixed inset-0 w-full h-full z-0">
       {/* Background Audio */}
@@ -36,6 +56,28 @@ export default function BackgroundManager({ activeBackground }: BackgroundManage
         suppressHydrationWarning
       >
         <source src="/ocean.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Overlay Audio 1 - Hyos */}
+      <audio
+        ref={audio1Ref}
+        loop
+        preload="auto"
+        suppressHydrationWarning
+      >
+        <source src="/audio1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Overlay Audio 2 - Cyamus */}
+      <audio
+        ref={audio2Ref}
+        loop
+        preload="auto"
+        suppressHydrationWarning
+      >
+        <source src="/audio2.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       {/* Default Background - img_1.png */}
