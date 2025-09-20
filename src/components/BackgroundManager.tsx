@@ -10,17 +10,12 @@ interface BackgroundManagerProps {
 }
 
 export default function BackgroundManager({ activeBackground, activeOverlay, audioEnabled = false }: BackgroundManagerProps) {
-  const hyosVideoRef = useRef<HTMLVideoElement>(null);
   const cyamusVideoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const audio1Ref = useRef<HTMLAudioElement>(null);
   const audio2Ref = useRef<HTMLAudioElement>(null);
 
   // Handle autoplay after hydration
   useEffect(() => {
-    if (hyosVideoRef.current) {
-      hyosVideoRef.current.play().catch(console.error);
-    }
     if (cyamusVideoRef.current) {
       cyamusVideoRef.current.play().catch(console.error);
     }
@@ -43,10 +38,6 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
         });
       }
       
-      if (audio1Ref.current) {
-        console.log('Enabling audio1.mp3');
-        audio1Ref.current.muted = false;
-      }
       
       if (audio2Ref.current) {
         console.log('Enabling audio2.mp3');
@@ -57,10 +48,6 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
       if (audioRef.current) {
         audioRef.current.muted = true;
         audioRef.current.pause();
-      }
-      if (audio1Ref.current) {
-        audio1Ref.current.muted = true;
-        audio1Ref.current.pause();
       }
       if (audio2Ref.current) {
         audio2Ref.current.muted = true;
@@ -75,24 +62,10 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
     console.log('Audio enabled:', audioEnabled);
     console.log('Audio refs:', {
       ocean: !!audioRef.current,
-      audio1: !!audio1Ref.current,
       audio2: !!audio2Ref.current
     });
     
-    if (activeOverlay === 'hyos' && audio1Ref.current && audioEnabled) {
-      console.log('Playing audio1 for Hyos');
-      console.log('Audio1 muted:', audio1Ref.current.muted);
-      console.log('Audio1 src:', audio1Ref.current.src);
-      audio1Ref.current.volume = 0.6; // 60% volume
-      audio1Ref.current.play().then(() => {
-        console.log('Audio1 started playing successfully');
-      }).catch((error) => {
-        console.error('Error playing audio1:', error);
-      });
-    } else if (audio1Ref.current) {
-      console.log('Pausing audio1');
-      audio1Ref.current.pause();
-    }
+    // Hyos no longer has audio
 
     if (activeOverlay === 'cyamus' && audio2Ref.current && audioEnabled) {
       console.log('Playing audio2 for Cyamus');
@@ -124,20 +97,6 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
         Your browser does not support the audio element.
       </audio>
 
-      {/* Overlay Audio 1 - Hyos */}
-      <audio
-        ref={audio1Ref}
-        loop
-        muted
-        preload="auto"
-        suppressHydrationWarning
-        onLoadStart={() => console.log('Audio1 load started')}
-        onCanPlay={() => console.log('Audio1 can play')}
-        onError={(e) => console.error('Audio1 error:', e)}
-      >
-        <source src="/audio1.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
 
       {/* Overlay Audio 2 - Cyamus */}
       <audio
@@ -166,22 +125,6 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
         />
       </div>
 
-      {/* Hyos Background - vid_1.mp4 */}
-      <div className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
-        activeBackground === 'hyos' ? 'opacity-100' : 'opacity-0'
-      }`}>
-        <video
-          ref={hyosVideoRef}
-          className="w-full h-full object-cover"
-          loop
-          muted
-          playsInline
-          suppressHydrationWarning
-        >
-          <source src="/vid_1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
 
       {/* Cyamus Background - vid_2.mp4 */}
       <div className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${

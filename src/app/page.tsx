@@ -19,7 +19,7 @@ export default function Home() {
     setActiveOverlay(menuItem);
     // Change background based on menu item
     if (menuItem === 'hyos') {
-      setActiveBackground('hyos');
+      setActiveBackground('default'); // Hyos uses default background with blur overlay
     } else if (menuItem === 'cyamus') {
       setActiveBackground('cyamus');
     }
@@ -44,11 +44,24 @@ export default function Home() {
       {/* Background Manager Component */}
       <BackgroundManager activeBackground={activeBackground} activeOverlay={activeOverlay} audioEnabled={audioEnabled} />
       
-      {/* Black overlay when overlay is active */}
-      {activeOverlay && (
+      {/* Transparent blur overlay for hyos */}
+      {activeOverlay === 'hyos' && (
+        <div 
+          className="fixed inset-0 z-[55] animate-in fade-in duration-300"
+          style={{
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)'
+          }}
+        >
+        </div>
+      )}
+      
+      {/* Black overlay for cyamus */}
+      {activeOverlay === 'cyamus' && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-30 z-[55] animate-in fade-in duration-300" 
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.51)' }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
         >
           {/* Debug: This should be visible */}
         </div>
