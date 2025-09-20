@@ -47,11 +47,12 @@ export default function Home() {
       {/* Transparent blur overlay for hyos */}
       {activeOverlay === 'hyos' && (
         <div 
-          className="fixed inset-0 z-[55] animate-in fade-in duration-300"
+          className="fixed inset-0 z-[55]"
           style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)'
+            background: 'rgba(0, 0, 0, 0.14)',
+            backdropFilter: 'blur(2px)',
+            WebkitBackdropFilter: 'blur(2px)',
+            animation: 'hyosFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards'
           }}
         >
         </div>

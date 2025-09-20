@@ -59,3 +59,27 @@ body {
     opacity: 0.8;
   }
 }
+
+/* Smooth fade in animation for Hyos overlay */
+@keyframes hyosFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  30% {
+    opacity: 0.3;
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+  }
+  60% {
+    opacity: 0.7;
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}

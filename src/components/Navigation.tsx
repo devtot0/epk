@@ -39,9 +39,9 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
           style={{
             textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
             filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
-            animation: 'glow-pulse 4s ease-in-out infinite alternate',
+            animation: 'glow-pulse 1.2s ease-in-out infinite alternate',
             animationName: 'glow-pulse',
-            animationDuration: '4s',
+            animationDuration: '1.2s',
             animationTimingFunction: 'ease-in-out',
             animationIterationCount: 'infinite',
             animationDirection: 'alternate'
@@ -60,9 +60,9 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
             style={{
               textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
               filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
-              animation: 'glow-pulse 3s ease-in-out infinite alternate',
+              animation: 'glow-pulse 0.8s ease-in-out infinite alternate',
               animationName: 'glow-pulse',
-              animationDuration: '3s',
+              animationDuration: '0.8s',
               animationTimingFunction: 'ease-in-out',
               animationIterationCount: 'infinite',
               animationDirection: 'alternate'
@@ -81,9 +81,9 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
           style={{
             textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
             filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
-            animation: 'glow-pulse 2s ease-in-out infinite alternate',
+            animation: 'glow-pulse 1.5s ease-in-out infinite alternate',
             animationName: 'glow-pulse',
-            animationDuration: '2s',
+            animationDuration: '1.5s',
             animationTimingFunction: 'ease-in-out',
             animationIterationCount: 'infinite',
             animationDirection: 'alternate'

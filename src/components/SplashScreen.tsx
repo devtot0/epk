@@ -36,7 +36,7 @@ export default function SplashScreen({ onAccept }: SplashScreenProps) {
               isClicked ? 'scale-95 opacity-80' : 'hover:scale-105 animate-pulse'
             }`}
             style={{
-              animation: isClicked ? 'none' : 'breathe 3s ease-in-out infinite'
+              animation: isClicked ? 'none' : 'breathe 6s ease-in-out infinite'
             }}
             priority
           />
