@@ -48,9 +48,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
               <div className="space-y-4">
                 <p>Bearing the genus name of black henbane — a hallucinogenic herb used in European witchcraft — <strong>Hyos</strong> Cyamus is, naturally, a devoted <strong>Trance</strong> music aficionado. In his <strong>DJ</strong> sets, he blends various subgenres of Trance with an admixture of mercurial techno and airy electronica, creating deeply intoxicating, hypnotic potions.</p>
                 
-                <p>It is of utmost importance to him to actively preserve the cultural legacy of '90s Trance by digitizing rare records and preventing them from falling into oblivion.</p>
+                <p>It is of utmost importance to him to actively preserve the cultural legacy of &apos;90s Trance by digitizing rare records and preventing them from falling into oblivion.</p>
                 
-                <p>His own <strong>productions</strong> are, conversely, barely club-oriented. Hyos Cyamus takes his listeners on a journey through their inner subtle realms, drawing inspiration from haunted folk music, England's Hidden Reverse scene, experimental electronica, thunderous noise bursts, and, naturally, Trance music.</p>
+                <p>His own <strong>productions</strong> are, conversely, barely club-oriented. Hyos Cyamus takes his listeners on a journey through their inner subtle realms, drawing inspiration from haunted folk music, England&apos;s Hidden Reverse scene, experimental electronica, thunderous noise bursts, and, naturally, Trance music.</p>
                 
                 <p>Will you dare to rub in the flying ointment on your forehead and let your mind run wild?</p>
               </div>
