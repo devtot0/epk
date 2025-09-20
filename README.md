@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EPK - Electronic Press Kit
 
-## Getting Started
+A modern, responsive Next.js application with Tailwind CSS designed for electronic press kits. Features a full-screen background image with overlay navigation.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design**: 
+  - Desktop: Full-screen background image with contained app window
+  - Mobile/Tablet: Black background with optional image overlay
+- **Non-scrollable Main Page**: Background remains fixed while overlays are scrollable
+- **Overlay Navigation**: Menu items open scrollable splash screens
+- **Modern UI**: Built with Next.js 15, React 19, and Tailwind CSS 4
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and layout
+│   ├── layout.tsx           # Root layout component
+│   └── page.tsx             # Main page component
+└── components/
+    ├── BackgroundImage.tsx   # Responsive background image component
+    ├── Navigation.tsx        # Top navigation with menu items
+    └── Overlay.tsx          # Scrollable overlay/splash screens
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Add your background image**:
+   - Replace `public/background-image.jpg` with your actual background image
+   - Recommended size: 1920x1080 or higher for desktop
+   - Optional: Add `public/background-mobile.jpg` for mobile-specific image
 
-## Learn More
+3. **Customize content**:
+   - Edit `src/components/Navigation.tsx` to modify menu items
+   - Edit `src/components/Overlay.tsx` to customize overlay content
+   - Update metadata in `src/app/layout.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Start development server
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Build for production
+npm run build
 
-## Deploy on Vercel
+# Start production server
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Adding New Menu Items
+
+1. Update the `menuItems` array in `src/components/Navigation.tsx`
+2. Add corresponding case in `src/components/Overlay.tsx`
+
+### Adding Videos
+
+Videos can be added to overlay components in `src/components/Overlay.tsx`:
+
+```tsx
+<video 
+  className="w-full h-auto rounded-lg"
+  controls
+  preload="metadata"
+>
+  <source src="/your-video.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+```
+
+### Responsive Behavior
+
+- **Desktop (lg+)**: Background image covers full screen, app content is overlaid
+- **Mobile/Tablet (<lg)**: Black background with optional image overlay
+- **Overlays**: Always scrollable regardless of device size
+
+## Deployment
+
+This is a static website that can be deployed to:
+- Vercel (recommended for Next.js)
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+For static export, add to `next.config.ts`:
+```typescript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  }
+};
+
+export default nextConfig;
+```
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Responsive design works on all screen sizes
