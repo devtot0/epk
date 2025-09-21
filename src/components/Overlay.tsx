@@ -34,8 +34,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
         return (
           <div className="p-8" style={{ background: 'transparent' }}>
             <h2 
-              className="text-3xl mb-2 text-white"
+              className="text-4xl mb-2 text-white"
               style={{
+                fontFamily: 'OldeEnglish, serif',
                 textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
                 filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
                 animation: 'glow-pulse 1.2s ease-in-out infinite alternate'
@@ -64,8 +65,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
               
               <div className="space-y-4">
                 <h3 
-                  className="text-xl"
+                  className="text-2xl"
                   style={{
+                    fontFamily: 'OldeEnglish, serif',
                     textShadow: '0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1)',
                     filter: 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))',
                     animation: 'glow-pulse 1.5s ease-in-out infinite alternate'
@@ -85,8 +87,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
               
               <div className="space-y-4">
                 <h3 
-                  className="text-xl"
+                  className="text-2xl"
                   style={{
+                    fontFamily: 'OldeEnglish, serif',
                     textShadow: '0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1)',
                     filter: 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))',
                     animation: 'glow-pulse 1.8s ease-in-out infinite alternate'
@@ -109,8 +112,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
           <div className="p-8" style={{ background: 'transparent' }}>
             <div className="w-full flex justify-end mb-6">
               <h2 
-                className="text-3xl text-white"
+                className="text-4xl text-white"
                 style={{
+                  fontFamily: 'OldeEnglish, serif',
                   textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
                   filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
                   animation: 'glow-pulse 0.8s ease-in-out infinite alternate'
@@ -122,8 +126,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
             <div className="text-white space-y-6 max-w-2xl ml-auto">
               <div className="space-y-4 text-right">
                 <h4 
-                  className="text-xl font-semibold"
+                  className="text-2xl font-semibold"
                   style={{
+                    fontFamily: 'OldeEnglish, serif',
                     textShadow: '0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1)',
                     filter: 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))',
                     animation: 'glow-pulse 1.0s ease-in-out infinite alternate'
@@ -152,8 +157,9 @@ export default function Overlay({ type, onClose }: OverlayProps) {
               
               <div className="space-y-4 text-right">
                 <h4 
-                  className="text-xl font-semibold"
+                  className="text-2xl font-semibold"
                   style={{
+                    fontFamily: 'OldeEnglish, serif',
                     textShadow: '0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1)',
                     filter: 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.3))',
                     animation: 'glow-pulse 1.3s ease-in-out infinite alternate'

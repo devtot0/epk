@@ -33,10 +33,11 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
         {/* Logo/Brand */}
         <button
           onClick={() => onMenuClick('hyos')}
-          className={`text-white text-3xl hover:text-gray-300 transition-all duration-300 ${
+          className={`text-white text-5xl hover:text-gray-300 transition-all duration-300 ${
             activeOverlay ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
+            fontFamily: 'OldeEnglish, serif',
             textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
             filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
             animation: 'glow-pulse 1.2s ease-in-out infinite alternate',
@@ -56,8 +57,9 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
         }`}>
           <button
             onClick={() => onMenuClick('cyamus')}
-            className="text-white text-3xl font-medium hover:text-gray-300 transition-all duration-300"
+            className="text-white text-5xl font-medium hover:text-gray-300 transition-all duration-300"
             style={{
+              fontFamily: 'OldeEnglish, serif',
               textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
               filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
               animation: 'glow-pulse 0.8s ease-in-out infinite alternate',
@@ -75,10 +77,11 @@ export default function Navigation({ onMenuClick, activeOverlay }: NavigationPro
         {/* Mobile Menu Button - Cyamus */}
         <button
           onClick={() => onMenuClick('cyamus')}
-          className={`md:hidden text-white text-3xl hover:text-gray-300 transition-all duration-300 ${
+          className={`md:hidden text-white text-5xl hover:text-gray-300 transition-all duration-300 ${
             activeOverlay ? 'opacity-0 pointer-events-none' : 'opacity-100'
           }`}
           style={{
+            fontFamily: 'OldeEnglish, serif',
             textShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2)',
             filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))',
             animation: 'glow-pulse 1.5s ease-in-out infinite alternate',

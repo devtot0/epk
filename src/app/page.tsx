@@ -50,8 +50,8 @@ export default function Home() {
           className="fixed inset-0 z-[55]"
           style={{
             background: 'rgba(0, 0, 0, 0.14)',
-            backdropFilter: 'blur(2px)',
-            WebkitBackdropFilter: 'blur(2px)',
+            backdropFilter: 'blur(3px)',
+            WebkitBackdropFilter: 'blur(3px)',
             animation: 'hyosFadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards'
           }}
         >
