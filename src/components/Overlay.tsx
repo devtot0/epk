@@ -172,6 +172,43 @@ export default function Overlay({ type, onClose }: OverlayProps) {
                     Linktree
                   </a>
                 </div>
+                
+                <div className="mt-6 text-right">
+                  <div className="border-t border-white border-opacity-30 mb-4 ml-auto" style={{ width: '60px' }}></div>
+                  <p 
+                    className="text-white" 
+                    style={{ 
+                      fontFamily: 'OldeEnglish, serif', 
+                      fontSize: '16pt',
+                      textShadow: '0 0 4px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.1)',
+                      filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.2))'
+                    }}
+                  >
+                    Sound is God
+                  </p>
+                  <p 
+                    className="text-white" 
+                    style={{ 
+                      fontFamily: 'OldeEnglish, serif', 
+                      fontSize: '16pt',
+                      textShadow: '0 0 4px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.1)',
+                      filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.2))'
+                    }}
+                  >
+                    God is Love
+                  </p>
+                  <p 
+                    className="text-white" 
+                    style={{ 
+                      fontFamily: 'OldeEnglish, serif', 
+                      fontSize: '16pt',
+                      textShadow: '0 0 4px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2), 0 0 12px rgba(255, 255, 255, 0.1)',
+                      filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.2))'
+                    }}
+                  >
+                    Love is the Law
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -78,6 +78,33 @@ export default function Home() {
           onClose={handleOverlayClose}
         />
       )}
+      
+      {/* Hidden center link */}
+      <a 
+        id="atlantic-religion-link"
+        href="https://atlanticreligion.com/2014/07/27/hallucinosis-battle-fury-and-oracles-of-the-divine/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed z-[10]"
+        style={{ 
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '200px',
+          height: '200px',
+          opacity: 0,
+          cursor: 'pointer'
+        }}
+      >
+      </a>
+      
+      <style jsx>{`
+        @media (max-width: 768px) {
+          #atlantic-religion-link {
+            top: 25% !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
