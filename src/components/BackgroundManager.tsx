@@ -162,7 +162,7 @@ export default function BackgroundManager({ activeBackground, activeOverlay, aud
           playsInline
           suppressHydrationWarning
         >
-          <source src="/vid_2.mp4" type="video/mp4" />
+          <source src="/vid_2.webm" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

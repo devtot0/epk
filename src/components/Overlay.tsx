@@ -159,7 +159,7 @@ export default function Overlay({ type, onClose }: OverlayProps) {
                     animation: 'glow-pulse 1.3s ease-in-out infinite alternate'
                   }}
                 >
-                  <strong>Bookings/Contact</strong>
+                  <strong>Bookings • Contact</strong>
                 </h4>
                 <div className="space-y-3">
                   <a href="https://linktr.ee/hyos_cyamus" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-gray-300 transition-colors duration-200 underline">
