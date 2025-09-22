@@ -68,6 +68,15 @@ export default function Home() {
         </div>
       )}
       
+      {/* Black overlay for default background */}
+      {!activeOverlay && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-20 z-[10] animate-in fade-in duration-300" 
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+        >
+        </div>
+      )}
+      
       {/* Navigation Component */}
       <Navigation onMenuClick={handleMenuClick} activeOverlay={activeOverlay} />
       
