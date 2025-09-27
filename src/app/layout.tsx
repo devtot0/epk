@@ -37,6 +37,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/splash.png" />
         <link rel="shortcut icon" href="/splash.png" />
         <link rel="apple-touch-icon" href="/splash.png" />
+        {/* Cache busting meta tag */}
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
